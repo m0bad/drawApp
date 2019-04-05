@@ -8,21 +8,26 @@
 
         <!-- javascript libraries -->
         <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/paper.js/0.12.0/paper-core.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
-
-        <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/hammer.js/2.0.8/hammer.js"></script>
+        <script src="./js/hammer.js"></script>
+		<script src="./js/paper-full.js"></script>
 
         <script type="text/javascript">
             $(document).ready(function(){
-                
+                var mc = new Hammer(document.getElementById("draw"))
+                paper.setup(document.getElementById("draw"))
+
+                //handle touch input
+                mc.on("hammer.input",function(ev){
+                    console.log(ev);
+                })
+
             });
 
         </script>
     </head>
     <body>
-        <div id="draw">
+        <canvas id="draw">
 
-        </div>
+        </canvas>
     </body>
 </html>
