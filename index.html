@@ -20,7 +20,13 @@
                 mc.on("hammer.input",function(ev){
                     // console.log(ev);
                     if(ev.isFirst){
-                        startDraw(ev)
+                        //if shift key is pressed => delete
+                        if(ev.srcEvent.shiftKey){
+                            startDraw(ev,"black",20)
+                        }
+                        else{
+                            startDraw(ev)
+                        }
                     }
                     else if (ev.isFinal){
                         endDraw(ev)
@@ -33,10 +39,10 @@
                 })
 
                 //handle startDraw
-                const startDraw = (ev) => {
+                const startDraw = (ev , color="white",width=3) => {
                     var path = new paper.Path({
-                        strokeColor:"white",
-                        strokeWidth:3,
+                        strokeColor:color,
+                         strokeWidth:width
 
                     })
                 }
