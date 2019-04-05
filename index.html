@@ -34,8 +34,11 @@
 
                 //handle startDraw
                 const startDraw = (ev) => {
-                    var path = new paper.Path()
-                    path.strokeColor="white"
+                    var path = new paper.Path({
+                        strokeColor:"white",
+                        strokeWidth:3,
+
+                    })
                 }
                 //handle middleDraw
                 const middleDraw = (ev) => {
@@ -47,7 +50,7 @@
 
                 //handle endDraw
                 const endDraw = (ev) => {
-                    
+                    paper.project._activeLayer.lastChild.simplify(20)
                 }
             });
 
