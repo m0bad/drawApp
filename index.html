@@ -34,16 +34,20 @@
 
                 //handle startDraw
                 const startDraw = (ev) => {
-                    console.log("start draw",ev.center.x , ev.center.y)
+                    var path = new paper.Path()
+                    path.strokeColor="white"
                 }
                 //handle middleDraw
                 const middleDraw = (ev) => {
-                    console.log("middle draw",ev.center.x, ev.center.y)
+                    paper.project._activeLayer.lastChild.add({
+                        x:ev.center.x,
+                        y:ev.center.y
+                    })
                 }
 
                 //handle endDraw
                 const endDraw = (ev) => {
-                    console.log("end draw",ev.center.x, ev.center.y)
+                    
                 }
             });
 
