@@ -22,7 +22,7 @@
                     if(ev.isFirst){
                         //if shift key is pressed => delete
                         if(ev.srcEvent.shiftKey){
-                            startDraw(ev,"black",20)
+                            startDraw(ev,"black",20,"destination-out")
                         }
                         else{
                             startDraw(ev)
@@ -39,11 +39,12 @@
                 })
 
                 //handle startDraw
-                const startDraw = (ev , color="white",width=3) => {
+                const startDraw = (ev , strokeColor="white",strokeWidth=3,blendMode="normal") => {
                     var path = new paper.Path({
-                        strokeColor:    color,
-                         strokeWidth:   width,
-                         strokeCap:     "round" //round the lines
+                        strokeColor:    strokeColor,
+                         strokeWidth:   strokeWidth,
+                         strokeCap:     "round", //round the lines
+                         blendMode:     blendMode
 
                     })
                 }
