@@ -18,9 +18,33 @@
 
                 //handle touch input
                 mc.on("hammer.input",function(ev){
-                    console.log(ev);
+                    // console.log(ev);
+                    if(ev.isFirst){
+                        startDraw(ev)
+                    }
+                    else if (ev.isFinal){
+                        endDraw(ev)
+
+
+                    }
+                    else{
+                        middleDraw(ev)
+                    }
                 })
 
+                //handle startDraw
+                const startDraw = (ev) => {
+                    console.log("start draw",ev.center.x , ev.center.y)
+                }
+                //handle middleDraw
+                const middleDraw = (ev) => {
+                    console.log("middle draw",ev.center.x, ev.center.y)
+                }
+
+                //handle endDraw
+                const endDraw = (ev) => {
+                    console.log("end draw",ev.center.x, ev.center.y)
+                }
             });
 
         </script>
